@@ -13,10 +13,11 @@ The **Metastatic Perirectal Lymph node dataset (MEPLY)**, encompassing **269** e
 
 
 ### Dataset Example
-We provide examples of our dataset in npz format. Each npz file contains a dictionary with the following keys:
+We provide examples of our dataset in [examples](examples). Each npz file contains a dictionary with the following keys:
 
-- `image`: a numpy array of shape (H, W, D) representing the CT sequence.
-- `lbl`: a numpy array of shape (H, W, D) representing the ground truth lymph nodesegmentation mask.
+- `img`: a numpy array of shape (H, W, D) representing the CT sequence.
+- `label`: a numpy array of shape (H, W, D) representing the ground truth lymph nodesegmentation mask.
+- `H = W = 512`, `D = 15`
 
 An example of how to load the data and visualize it is given in [lymph_dataloader.py](lymph_dataloader.py). 
 
