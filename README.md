@@ -9,26 +9,13 @@ The **Metastatic Perirectal Lymph node dataset (MEPLY)**, encompassing **269** e
 ![Meply1](./pics/demo_meply1.png)
 
 
+### Dataset Example
+We provide examples of our dataset in npz format. Each npz file contains a dictionary with the following keys:
 
-### News
-- **MEPLYv2** is now available for download at [https://huggingface.co/datasets/gwd200/MEPLYv2](https://huggingface.co/datasets/gwd200/MEPLYv2).
+- `image`: a numpy array of shape (H, W, D) representing the CT sequence.
+- `lbl`: a numpy array of shape (H, W, D) representing the ground truth lymph nodesegmentation mask.
 
+An example of how to load the data and visualize it is given in [lymph_dataloader.py](lymph_dataloader.py). 
 
-### Dataset Format
-Each CT scan is stored in a compressed numpy file (`.npz`) with the following keys:
-- `img`: the CT scan image with shape `(H, W, D)`
-- `lbl`: the annotated lymph node mask with shape `(H, W, D)`, 1 for the perirectal lymph node and 0 for the background.
-- `spacing`: the voxel spacing in the CT scan with shape `(3,)`
-
-A csv file (`.csv`) is provided for each scan with the following columns:
-- `pid`: patient ID
-- `target_index`: the index of the target node in the scan
-- `volume`: the volume of the target node in voxel units
-- `lower z`: the lower z-coordinate of the target node in voxel units
-- `lower y`: the lower y-coordinate of the target node in voxel units
-- `lower x`: the lower x-coordinate of the target node in voxel units
-- `upper z`: the upper z-coordinate of the target node in voxel units
-- `upper y`: the upper y-coordinate of the target node in voxel units
-- `upper x`: the upper x-coordinate of the target node in voxel units
-
-An sample dataloader for MEPLY is provided in the [prln_dataset.py](prln_dataset.py) file. 
+### Using the Dataset
+If you are interested in our full dataset, please contact <EMAIL> wansh@ustc.edu.cn and provide your organization's information and the purpose of use. 
